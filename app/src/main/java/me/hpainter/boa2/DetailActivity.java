@@ -13,10 +13,10 @@ public class DetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
 
-        nameTxt = (TextView) findViewById(R.id.nameDetailTxt);
-        idTxt = (TextView) findViewById(R.id.idDetailTxt);
-        localeTxt = (TextView) findViewById(R.id.localeDetailTxt);
-        versionTxt = (TextView) findViewById(R.id.versionDetailTxt);
+        nameTxt = findViewById(R.id.nameDetailTxt);
+        idTxt = findViewById(R.id.idDetailTxt);
+        localeTxt = findViewById(R.id.localeDetailTxt);
+        versionTxt = findViewById(R.id.versionDetailTxt);
 
         //Get Intent
         Intent i = this.getIntent();
@@ -32,7 +32,6 @@ public class DetailActivity extends AppCompatActivity {
         idTxt.setText(id);
         localeTxt.setText(locale);
         versionTxt.setText(version);
-
 
     }
 }

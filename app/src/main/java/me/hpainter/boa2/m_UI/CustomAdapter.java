@@ -7,9 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
-
 import java.util.ArrayList;
-
 import me.hpainter.boa2.DetailActivity;
 import me.hpainter.boa2.R;
 import me.hpainter.boa2.m_Model.User;
@@ -25,6 +23,7 @@ public class CustomAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
+
         return users.size();
     }
 
@@ -35,6 +34,7 @@ public class CustomAdapter extends BaseAdapter {
 
     @Override
     public long getItemId(int i) {
+
         return i;
     }
 
@@ -42,13 +42,13 @@ public class CustomAdapter extends BaseAdapter {
     public View getView(int i, View view, ViewGroup viewGroup) {
 
         if (view == null){
-            view = LayoutInflater.from(c).inflate(R.layout.model,viewGroup, false);
+            view = LayoutInflater.from(c).inflate(R.layout.model, viewGroup, false);
         }
 
-        TextView nameTxt = (TextView) view.findViewById(R.id.nameTxt);
-        TextView idTxt = (TextView) view.findViewById(R.id.idTxt);
-        TextView localeTxt = (TextView) view.findViewById(R.id.localeTxt);
-        TextView versionTxt = (TextView) view.findViewById(R.id.versionTxt);
+        TextView nameTxt = view.findViewById(R.id.nameTxt);
+        TextView idTxt = view.findViewById(R.id.idTxt);
+        TextView localeTxt = view.findViewById(R.id.localeTxt);
+        TextView versionTxt = view.findViewById(R.id.versionTxt);
 
         User user = (User) this.getItem(i);
 
@@ -73,7 +73,7 @@ public class CustomAdapter extends BaseAdapter {
 
         return view;
     }
-    //Open Activity
+    //Open the activity
     private void openDetailActivity(String...details) {
         Intent i = new Intent (c, DetailActivity.class);
         i.putExtra("NAME_KEY", details[0]);

@@ -5,9 +5,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.Toolbar;
-
-import java.util.List;
 
 import me.hpainter.boa2.m_JSON.JSONDownloader;
 
@@ -21,9 +18,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        lv = (ListView) findViewById(R.id.lv);
+        lv = findViewById(R.id.lv);
 
-        Button but = (Button) findViewById(R.id.but);
+        Button but = findViewById(R.id.but);
         but.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
