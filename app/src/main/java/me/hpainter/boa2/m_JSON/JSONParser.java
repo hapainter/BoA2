@@ -3,15 +3,12 @@ package me.hpainter.boa2.m_JSON;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import java.util.ArrayList;
-
-import me.hpainter.boa2.R;
 import me.hpainter.boa2.m_Model.User;
 import me.hpainter.boa2.m_UI.CustomAdapter;
 
@@ -22,7 +19,6 @@ public class JSONParser extends AsyncTask<Void, Void, Boolean> {
     String jsonData;
     ListView lv;
 
-    //initialize lv somehow
     ProgressDialog pd;
     ArrayList<User> users = new ArrayList<>();
 
@@ -52,7 +48,7 @@ public class JSONParser extends AsyncTask<Void, Void, Boolean> {
         super.onPostExecute(isParsed);
 
         pd.dismiss();
-
+    //if parsed, set adapter
         if (isParsed) {
             //Bind
             lv.setAdapter(new CustomAdapter(c, users));
@@ -68,7 +64,7 @@ public class JSONParser extends AsyncTask<Void, Void, Boolean> {
             JSONArray jsonArray = mainObject.getJSONArray("mobileContentVersion");
 
             users.clear();
-            User user;
+            User user; //Declare single user
             //iterate
             for (int i = 0; i < jsonArray.length(); i++) {
                 JSONObject object = (JSONObject) jsonArray.get(i);

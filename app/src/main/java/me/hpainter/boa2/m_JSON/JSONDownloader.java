@@ -36,7 +36,7 @@ public class JSONDownloader extends AsyncTask<Void, Void, String> {
         pd.setMessage("Please Wait");
         pd.show();
     }
-
+//Task in background thread to not cause error in main activity
     @Override
     protected String doInBackground(Void... voids) {
         return download();
@@ -52,11 +52,11 @@ public class JSONDownloader extends AsyncTask<Void, Void, String> {
             String error = jsonData;
             Toast.makeText(c, error, Toast.LENGTH_SHORT).show();
         }else{
-            //Parser
+
             new JSONParser(c, jsonData, lv).execute();
         }
     }
-
+//Establish a connection
     private String download() {
         Object connection = Connector.connect(jsonURL);
         if (connection.toString().startsWith("Error")) {
@@ -67,7 +67,6 @@ public class JSONDownloader extends AsyncTask<Void, Void, String> {
             if(con.getResponseCode() == con.HTTP_OK) {
                 InputStream is = new BufferedInputStream(con.getInputStream());
                 BufferedReader br = new BufferedReader(new InputStreamReader(is));
-
                 String line;
                 StringBuffer jsonData = new StringBuffer();
 
@@ -83,7 +82,7 @@ public class JSONDownloader extends AsyncTask<Void, Void, String> {
             }else{
                 return "Error " + con.getResponseMessage();
             }
-
+        //Error Handling
         } catch (IOException e) {
             e.printStackTrace();
             return "Error "+e.getMessage();

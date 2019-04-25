@@ -1,5 +1,5 @@
 package me.hpainter.boa2.m_Model;
-
+//Specific User Details
 public class User {
     String name, id, version, locale;
 

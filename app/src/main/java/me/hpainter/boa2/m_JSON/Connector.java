@@ -19,12 +19,12 @@ public class Connector {
             con.setRequestProperty("device-type", "APPLE");
             con.setRequestProperty("platformType", "SMRTPH");
             con.setRequestMethod("GET");
-            con.setConnectTimeout(15000);
-            con.setReadTimeout(15000);
+            con.setConnectTimeout(18000);
+            con.setReadTimeout(18000);
             con.setDoInput(true);
 
             return con;
-
+//Handling Errors
         } catch (MalformedURLException e) {
             e.printStackTrace();
             return "Error"+e.getMessage();

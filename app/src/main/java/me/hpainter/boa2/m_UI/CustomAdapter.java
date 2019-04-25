@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import me.hpainter.boa2.DetailActivity;
 import me.hpainter.boa2.R;
 import me.hpainter.boa2.m_Model.User;
-
+//custom view for single user within listview
 public class CustomAdapter extends BaseAdapter {
     Context c;
     ArrayList<User> users;
@@ -40,15 +40,12 @@ public class CustomAdapter extends BaseAdapter {
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
-
+//When using custom view in ListView, define rows with model.xml by using LayoutInflator
         if (view == null){
             view = LayoutInflater.from(c).inflate(R.layout.model, viewGroup, false);
         }
 
         TextView nameTxt = view.findViewById(R.id.nameTxt);
-        TextView idTxt = view.findViewById(R.id.idTxt);
-        TextView localeTxt = view.findViewById(R.id.localeTxt);
-        TextView versionTxt = view.findViewById(R.id.versionTxt);
 
         User user = (User) this.getItem(i);
 
@@ -58,9 +55,6 @@ public class CustomAdapter extends BaseAdapter {
         final String version = user.getVersion();
 
         nameTxt.setText(name);
-        idTxt.setText(id);
-        localeTxt.setText(locale);
-        versionTxt.setText(version);
 
         view.setOnClickListener(new View.OnClickListener() {
 
@@ -73,7 +67,7 @@ public class CustomAdapter extends BaseAdapter {
 
         return view;
     }
-    //Open the activity
+    //Open the detail activity by intent
     private void openDetailActivity(String...details) {
         Intent i = new Intent (c, DetailActivity.class);
         i.putExtra("NAME_KEY", details[0]);

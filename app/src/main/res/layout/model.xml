@@ -3,11 +3,11 @@
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="200dp"
     android:layout_margin="10dp"
     card_view:cardCornerRadius="5dp"
     card_view:cardElevation="5dp">
-
+    <!--Model is Responsible for Showing a Rows in ListView with TextViews-->
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -18,43 +18,8 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Name"
+            android:textSize="16dp"
             android:id="@+id/nameTxt"
-            android:padding="10dp"
-            android:textColor="@color/colorPrimaryDark"
-            android:textStyle="bold"
-            android:layout_alignParentLeft="true"
-            />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="ID"
-            android:id="@+id/idTxt"
-            android:padding="10dp"
-            android:textColor="@color/colorPrimaryDark"
-            android:textStyle="bold"
-            android:layout_alignParentLeft="true"
-            />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Locale"
-            android:id="@+id/localeTxt"
-            android:padding="10dp"
-            android:textColor="@color/colorPrimaryDark"
-            android:textStyle="bold"
-            android:layout_alignParentLeft="true"
-            />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Version"
-            android:id="@+id/versionTxt"
             android:padding="10dp"
             android:textColor="@color/colorPrimaryDark"
             android:textStyle="bold"
